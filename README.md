@@ -5,8 +5,7 @@ For now the classes just provide a means to draw a webcam video to the backgroun
 
 Let's go straight to the video - here is a demo of drawing objects (in this case Coherent UI browser views) on top of a video that is in the background:
 
-=======insert video link here===========
-	
+https://www.youtube.com/watch?v=I0IZ_G_TWIo	
 
 ## How to integrate into Unreal Engine C++ project
 
