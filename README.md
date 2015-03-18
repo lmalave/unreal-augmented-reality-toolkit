@@ -15,6 +15,16 @@ https://www.youtube.com/watch?v=I0IZ_G_TWIo
 
 * Create a Blueprint using VideoDisplaySurface as the base class 
 
+add to your Character class constructor: 
+
+	static ConstructorHelpers::FObjectFinder<UBlueprint> 		VideoSurfaceBlueprint(TEXT("Blueprint'/Game/Blueprints/VideoDisplaySurfaceBlueprint.VideoDisplaySurfaceBlueprint'"));
+	if (VideoSurfaceBlueprint.Object){
+		VideoSurfaceBlueprintClass = (UClass*)VideoSurfaceBlueprint.Object->GeneratedClass;
+	}
+
+	BackgroundVideoSurface = ObjectInitializer.CreateDefaultSubobject<UChildActorComponent>(this, TEXT("BackgroundVideoSurface"));
+	BackgroundVideoSurface->AttachParent = FirstPersonCameraComponent;
+	BackgroundVideoSurface->ChildActorClass = VideoSurfaceBlueprintClass;
 
 add to BeginPlay(): 
 
